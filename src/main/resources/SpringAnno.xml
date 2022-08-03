@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="org.genspark.annotationDemo" />
+
+    <bean id="student" class="org.genspark.annotationDemo.Student">
+        <property name="id" value="1" />
+        <property name="name" value="John Doe" />
+    </bean>
+
+    <bean id="address" class="org.genspark.annotationDemo.Address">
+        <property name="zipcode" value="43221" />
+        <property name="state" value="OH" />
+        <property name="country" value="USA" />
+        <property name="city" value="Columbus" />
+    </bean>
+
+    <bean id="phone" class="org.genspark.annotationDemo.Phone">
+        <property name="mob" value="1234567890" />
+    </bean>
+</beans>

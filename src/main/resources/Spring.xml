@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+   		   http://www.springframework.org/schema/util/spring-util.xsd">
+        <!-- bean definitions here -->
+
+    <bean id="Student" class="org.genspark.xmlDemo.Student">
+        <property name="id" value="0"/>
+        <property name="name" value="John Doe"/>
+        <property name ="add" ref="Address"/>
+        <property name ="ph" ref="phList"/>
+    </bean>
+
+    <bean id="Address" class="org.genspark.xmlDemo.Address">
+        <property name="city" value="San Francisco"/>
+        <property name="state" value="CA"/>
+        <property name="country" value="US"/>
+        <property name="zipcode" value="12345"/>
+    </bean>
+
+    <bean id="Phone" class="org.genspark.xmlDemo.Phone">
+        <property name="mob" value="1234567890"/>
+    </bean>
+
+    <util:list id="phList" list-class="java.util.ArrayList" value-type="org.genspark.xmlDemo.Phone">
+        <ref bean="Phone"/>
+    </util:list>
+</beans>
